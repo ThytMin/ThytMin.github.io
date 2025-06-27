@@ -149,3 +149,31 @@ const portfolioItems = [
     },
     // ... item lainnya dengan kategori yang sesuai
 ];
+
+// Portfolio Filter
+const filterButtons = document.querySelectorAll('.filter-btn');
+
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        // Update active button
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        
+        const filter = button.getAttribute('data-filter');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        
+        portfolioItems.forEach(item => {
+            const categories = item.getAttribute('data-category') || '';
+            if (filter === 'all' || categories.includes(filter)) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    });
+});
+
+// Update portfolio items to include data-category
+document.querySelectorAll('.portfolio-item').forEach((item, index) => {
+    item.setAttribute('data-category', portfolioItems[index].category);
+});

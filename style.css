@@ -464,3 +464,36 @@ footer {
     background-color: var(--primary-color);
     color: white;
 }
+
+/* Scroll Animations */
+[data-scroll] {
+    opacity: 0;
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+[data-scroll="fade-in"] {
+    transform: translateY(50px);
+}
+
+[data-scroll="fade-in"].scroll-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+[data-scroll="fade-left"] {
+    transform: translateX(-50px);
+}
+
+[data-scroll="fade-left"].scroll-animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+[data-scroll="fade-right"] {
+    transform: translateX(50px);
+}
+
+[data-scroll="fade-right"].scroll-animate {
+    opacity: 1;
+    transform: translateX(0);
+}

@@ -198,3 +198,16 @@ checkScroll();
 
 // Check on scroll
 window.addEventListener('scroll', checkScroll);
+
+// Cookie Consent
+const cookieConsent = document.querySelector('.cookie-consent');
+const cookieBtn = document.querySelector('.cookie-btn');
+
+if (!localStorage.getItem('cookieAccepted')) {
+    cookieConsent.style.display = 'flex';
+}
+
+cookieBtn.addEventListener('click', () => {
+    localStorage.setItem('cookieAccepted', 'true');
+    cookieConsent.style.display = 'none';
+});

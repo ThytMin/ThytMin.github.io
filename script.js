@@ -371,3 +371,70 @@ function loadReviews() {
         reviewList.appendChild(reviewItem);
     });
 }
+
+// Product Data
+const products = [
+    {
+        id: 1,
+        name: "Template Website Portfolio",
+        category: "templates",
+        price: 250000,
+        description: "Template modern untuk website portfolio dengan desain responsif.",
+        file: "template-portfolio.zip"
+    },
+    // Tambahkan produk lainnya
+];
+
+// Load Products
+function loadProducts() {
+    const productGrid = document.querySelector('.product-grid');
+    productGrid.innerHTML = '';
+    
+    products.forEach(product => {
+        const productCard = document.createElement('div');
+        productCard.className = 'product-card';
+        productCard.dataset.category = product.category;
+        productCard.innerHTML = `
+            <div class="product-image">
+                <img src="https://via.placeholder.com/300" alt="${product.name}">
+            </div>
+            <div class="product-info">
+                <h3>${product.name}</h3>
+                <p class="product-category">${product.category}</p>
+                <p class="product-desc">${product.description}</p>
+                <div class="product-footer">
+                    <span class="product-price">Rp${product.price.toLocaleString()}</span>
+                    <button class="add-to-cart" data-id="${product.id}">Beli</button>
+                </div>
+            </div>
+        `;
+        productGrid.appendChild(productCard);
+    });
+}
+
+// Cart Functionality
+let cart = [];
+
+function addToCart(productId) {
+    const product = products.find(p => p.id == productId);
+    if (product) {
+        cart.push(product);
+        updateCartCount();
+    }
+}
+
+function updateCartCount() {
+    const cartCount = document.querySelector('.cart-count');
+    if (cartCount) {
+        cartCount.textContent = cart.length;
+    }
+}
+
+// Event Delegation for Add to Cart
+document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('add-to-cart')) {
+        const productId = e.target.dataset.id;
+        addToCart(productId);
+        alert('Produk telah ditambahkan ke keranjang');
+    }
+});

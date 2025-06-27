@@ -177,3 +177,24 @@ filterButtons.forEach(button => {
 document.querySelectorAll('.portfolio-item').forEach((item, index) => {
     item.setAttribute('data-category', portfolioItems[index].category);
 });
+
+// Scroll Animation
+function checkScroll() {
+    const elements = document.querySelectorAll('[data-scroll]');
+    const windowHeight = window.innerHeight;
+    const scrollPosition = window.scrollY;
+    
+    elements.forEach(element => {
+        const elementPosition = element.offsetTop;
+        
+        if (scrollPosition > elementPosition - windowHeight + 100) {
+            element.classList.add('scroll-animate');
+        }
+    });
+}
+
+// Initial check
+checkScroll();
+
+// Check on scroll
+window.addEventListener('scroll', checkScroll);

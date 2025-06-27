@@ -108,3 +108,30 @@ window.addEventListener('scroll', function() {
         nav.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
     }
 });
+
+// Testimonial Slider
+let currentTestimonial = 0;
+const testimonials = document.querySelectorAll('.testimonial-slide');
+const totalTestimonials = testimonials.length;
+
+function showTestimonial(index) {
+    testimonials.forEach(testimonial => testimonial.classList.remove('active'));
+    testimonials[index].classList.add('active');
+    currentTestimonial = index;
+}
+
+document.querySelector('.testimonial-next').addEventListener('click', () => {
+    currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
+    showTestimonial(currentTestimonial);
+});
+
+document.querySelector('.testimonial-prev').addEventListener('click', () => {
+    currentTestimonial = (currentTestimonial - 1 + totalTestimonials) % totalTestimonials;
+    showTestimonial(currentTestimonial);
+});
+
+// Auto-rotate testimonials every 5 seconds
+setInterval(() => {
+    currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
+    showTestimonial(currentTestimonial);
+}, 5000);

@@ -135,3 +135,17 @@ setInterval(() => {
     currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
     showTestimonial(currentTestimonial);
 }, 5000);
+
+const portfolioItems = [
+    {
+        title: "Proyek Desain Logo",
+        category: "design",
+        image: "https://via.placeholder.com/400x300"
+    },
+    {
+        title: "Website Perusahaan",
+        category: "web",
+        image: "https://via.placeholder.com/400x300"
+    },
+    // ... item lainnya dengan kategori yang sesuai
+];

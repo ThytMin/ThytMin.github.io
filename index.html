@@ -41,6 +41,50 @@
 <section id="services" class="services" data-scroll="fade-in">
     <!-- Layanan -->
 </section>
+    <section id="booking" class="booking">
+        <h2 class="section-title">Pesan Staff Freelance</h2>
+        <div class="booking-container">
+            <div class="staff-list">
+                <!-- Daftar staff akan dimuat via JS -->
+            </div>
+            <div class="booking-form-container">
+                <form class="booking-form">
+                    <h3>Form Pemesanan</h3>
+                    <div class="form-group">
+                        <label for="staff-select">Pilih Staff:</label>
+                        <select id="staff-select" required>
+                            <option value="">-- Pilih Staff --</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="service-select">Layanan:</label>
+                        <select id="service-select" required>
+                            <option value="">-- Pilih Layanan --</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="start-date">Tanggal Mulai:</label>
+                        <input type="date" id="start-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="end-date">Tanggal Selesai:</label>
+                        <input type="date" id="end-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="notes">Catatan Khusus:</label>
+                        <textarea id="notes" rows="3"></textarea>
+                    </div>
+                    <div class="price-summary">
+                        <h4>Ringkasan Biaya</h4>
+                        <p>Biaya per jam: <span id="hourly-rate">Rp0</span></p>
+                        <p>Total jam: <span id="total-hours">0</span> jam</p>
+                        <p class="total-price">Total: <span id="total-price">Rp0</span></p>
+                    </div>
+                    <button type="submit" class="submit-booking">Pesan Sekarang</button>
+                </form>
+            </div>
+        </div>
+    </section>
     <section id="services" class="services">
         <h2 class="section-title">Layanan Kami</h2>
         <div class="services-container">

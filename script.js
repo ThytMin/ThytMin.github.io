@@ -329,3 +329,45 @@ staffSelect.addEventListener('change', calculatePrice);
 // Initialize
 loadStaff();
 loadServices();
+
+// Review Data
+const reviews = [
+    {
+        id: 1,
+        clientName: "Budi Santoso",
+        clientCompany: "PT ABC",
+        rating: 5,
+        comment: "Hasil pekerjaan sangat memuaskan, dikerjakan tepat waktu dan profesional.",
+        date: "2023-05-15",
+        project: "Desain Website"
+    },
+    // Tambahkan ulasan lainnya
+];
+
+// Load Reviews
+function loadReviews() {
+    const reviewList = document.querySelector('.review-list');
+    reviewList.innerHTML = '';
+    
+    reviews.forEach(review => {
+        const reviewItem = document.createElement('div');
+        reviewItem.className = 'review-item';
+        reviewItem.innerHTML = `
+            <div class="review-header">
+                <div class="reviewer-info">
+                    <h4>${review.clientName}</h4>
+                    <p>${review.clientCompany}</p>
+                </div>
+                <div class="review-rating">
+                    ${generateRatingStars(review.rating)}
+                    <span>${review.date}</span>
+                </div>
+            </div>
+            <div class="review-content">
+                <h5>${review.project}</h5>
+                <p>${review.comment}</p>
+            </div>
+        `;
+        reviewList.appendChild(reviewItem);
+    });
+}

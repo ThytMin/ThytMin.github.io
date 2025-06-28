@@ -3,289 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Volund Studio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>NamaFreelance - Solusi Profesional Freelance</title>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-<section id="services" class="services" data-scroll="fade-in">
-    <!-- Navigasi -->
-</section>
-    <nav>
-        <div class="logo">
-            <h1>Volund Studio</h1>
-        </div>
-        <ul class="nav-links">
-            <li><a href="#home">Beranda</a></li>
-            <li><a href="#services">Layanan</a></li>
-            <li><a href="#portfolio">Portofolio</a></li>
-            <li><a href="#about">Tentang Kami</a></li>
-            <li><a href="#contact">Kontak</a></li>
-        </ul>
-        <div class="burger">
-            <i class="fas fa-bars"></i>
-        </div>
-    </nav>
+    <!-- Navbar -->
+    <nav id="navbar"></nav>
 
-<section id="services" class="services" data-scroll="fade-in">
     <!-- Hero Section -->
-</section>
-    <section id="home" class="hero">
+    <section class="hero">
         <div class="hero-content">
-            <h2>Solusi Kreatif untuk Kebutuhan Anda</h2>
-            <p>Kami menyediakan jasa freelance yang dapat membantu kebutuhan anda</p>
-            <a href="#contact" class="cta-button">Hubungi Kami</a>
+            <h1>Solusi Kreatif untuk Bisnis Anda</h1>
+            <p>Tim freelance profesional siap membantu proyek Anda</p>
+            <div class="hero-buttons">
+                <a href="auth/register.html" class="btn-primary">Daftar Sekarang</a>
+                <a href="#services" class="btn-secondary">Pelajari Layanan</a>
+            </div>
         </div>
     </section>
 
-<section id="services" class="services" data-scroll="fade-in">
-    <!-- Layanan -->
-</section>
-    <section id="booking" class="booking">
-        <h2 class="section-title">Pesan Staff Freelance</h2>
-        <div class="booking-container">
-            <div class="staff-list">
-                <!-- Daftar staff akan dimuat via JS -->
-            </div>
-            <div class="booking-form-container">
-                <form class="booking-form">
-                    <h3>Form Pemesanan</h3>
-                    <div class="form-group">
-                        <label for="staff-select">Pilih Staff:</label>
-                        <select id="staff-select" required>
-                            <option value="">-- Pilih Staff --</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="service-select">Layanan:</label>
-                        <select id="service-select" required>
-                            <option value="">-- Pilih Layanan --</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="start-date">Tanggal Mulai:</label>
-                        <input type="date" id="start-date" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="end-date">Tanggal Selesai:</label>
-                        <input type="date" id="end-date" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="notes">Catatan Khusus:</label>
-                        <textarea id="notes" rows="3"></textarea>
-                    </div>
-                    <div class="price-summary">
-                        <h4>Ringkasan Biaya</h4>
-                        <p>Biaya per jam: <span id="hourly-rate">Rp0</span></p>
-                        <p>Total jam: <span id="total-hours">0</span> jam</p>
-                        <p class="total-price">Total: <span id="total-price">Rp0</span></p>
-                    </div>
-                    <button type="submit" class="submit-booking">Pesan Sekarang</button>
-                </form>
-            </div>
-        </div>
-    </section>
-    <section id="reviews" class="reviews">
-        <h2 class="section-title">Ulasan Klien</h2>
-        <div class="review-container">
-            <div class="review-summary">
-                <div class="overall-rating">
-                    <h3>4.7</h3>
-                    <div class="stars">
-                        ${generateRatingStars(4.7)}
-                    </div>
-                    <p>Berdasarkan 24 ulasan</p>
-                </div>
-                <div class="rating-bars">
-                    <div class="rating-bar">
-                        <span>5 bintang</span>
-                        <div class="bar-container">
-                            <div class="bar" style="width: 70%"></div>
-                        </div>
-                        <span>70%</span>
-                    </div>
-                    <!-- Tambahkan bar untuk rating lainnya -->
-                </div>
-            </div>
-            <div class="review-list">
-                <!-- Ulasan akan dimuat via JS -->
-            </div>
-        </div>
-    </section>
-    <section id="services" class="services">
+    <!-- Services Section -->
+    <section id="services" class="section">
         <h2 class="section-title">Layanan Kami</h2>
-        <div class="services-container">
-            <div class="service-card">
-                <i class="fas fa-pen-fancy"></i>
-                <h3>Desain Grafis</h3>
-                <p>Logo, brosur, banner, dan materi pemasaran lainnya</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-code"></i>
-                <h3>Jasa Editing</h3>
-                <p>Ingin video ataupun foto anda lebih baik anda dapat memilih kami</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-chart-line"></i>
-                <h3>Yang Anda Butuhkan</h3>
-                <p>Apa yang anda butuhkan kami akan siap sedia membantu jika memang itu bisa diusahakan</p>
-            </div>
-        </div>
+        <div class="services-grid" id="services-container"></div>
     </section>
 
-<section id="services" class="services" data-scroll="fade-in">
-    <!-- Portofolio -->
-</section>
-    <section id="portfolio" class="portfolio">
-        <h2 class="section-title">Portofolio Kami</h2>
-        <div class="portfolio-grid">
-            <!-- Item portofolio akan dimuat via JavaScript -->
-        </div>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section">
+        <h2 class="section-title">Portofolio</h2>
+        <div class="portfolio-grid" id="portfolio-container"></div>
     </section>
 
-<section id="services" class="services" data-scroll="fade-in">
-    <!-- Tentang Kami -->
-</section>
-    <section id="about" class="about">
-        <h2 class="section-title">Tentang Kami</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <h3>Kantor Freelance Profesional</h3>
-                <p>Kami adalah tim profesional yang berdedikasi untuk memberikan solusi terbaik bagi klien kami. Dengan pengalaman lebih dari 5 tahun di industri ini, kami telah membantu berbagai bisnis mencapai tujuan mereka.</p>
-                <p>Pendekatan kami adalah memahami kebutuhan klien secara mendalam sebelum memberikan solusi yang tepat.</p>
-            </div>
-            <div class="about-image">
-                <img src="https://via.placeholder.com/400" alt="Tim Kami">
-            </div>
-        </div>
-    </section>
-
-<section id="services" class="services" data-scroll="fade-in">
-    <!-- Testimonials -->
-</section>
-    <section id="testimonials" class="testimonials">
-        <h2 class="section-title">Apa Kata Klien Kami</h2>
-        <div class="portfolio-filter">
-            <button class="filter-btn active" data-filter="all">Semua</button>
-            <button class="filter-btn" data-filter="design">Desain Grafis</button>
-            <button class="filter-btn" data-filter="web">Pengembangan Web</button>
-            <button class="filter-btn" data-filter="marketing">Digital Marketing</button>
-        </div>
-        <div class="testimonial-container">
-            <div class="testimonial-slide active">
-                <p class="testimonial-text">"Pelayanan sangat profesional dan hasilnya melebihi ekspektasi. Sangat direkomendasikan!"</p>
-                <div class="testimonial-author">
-                    <img src="https://via.placeholder.com/80" alt="Client 1">
-                    <div>
-                        <h4>Budi Santoso</h4>
-                        <p>Direktur, PT ABC</p>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-slide">
-                <p class="testimonial-text">"Tim yang sangat responsif dan mengerti kebutuhan bisnis. Projek selesai tepat waktu."</p>
-                <div class="testimonial-author">
-                    <img src="https://via.placeholder.com/80" alt="Client 2">
-                    <div>
-                        <h4>Anita Wijaya</h4>
-                        <p>Owner, Toko Online XYZ</p>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-slide">
-                <p class="testimonial-text">"Hasil desain sangat kreatif dan membantu meningkatkan penjualan produk kami."</p>
-                <div class="testimonial-author">
-                    <img src="https://via.placeholder.com/80" alt="Client 3">
-                    <div>
-                        <h4>David Kurniawan</h4>
-                        <p>Marketing Manager, DEF Corp</p>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-controls">
-                <button class="testimonial-prev"><i class="fas fa-chevron-left"></i></button>
-                <button class="testimonial-next"><i class="fas fa-chevron-right"></i></button>
-            </div>
-        </div>
-    </section>
-
-<section id="services" class="services" data-scroll="fade-in">
-    <!-- Kontak -->
-</section>
-    <section id="contact" class="contact">
-        <h2 class="section-title">Hubungi Kami</h2>
-        <div class="contact-container">
-            <form class="contact-form">
-                <input type="text" placeholder="Nama Anda" required>
-                <input type="email" placeholder="Email Anda" required>
-                <input type="tel" placeholder="Nomor Telepon">
-                <textarea placeholder="Pesan Anda" required></textarea>
-                <button type="submit" class="submit-button">Kirim Pesan</button>
-            </form>
-            <div class="contact-info">
-                <h3>Informasi Kontak</h3>
-                <p><i class="fas fa-phone"></i> Telepon: +62 895 7089 68886</p>
-                <p><i class="fas fa-envelope"></i> Email: volundst@gmail.com</p>
-                <div class="social-media">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-tiktok"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-discord"></i></a>
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-<section id="services" class="services" data-scroll="fade-in">
     <!-- Footer -->
-</section>
-    <footer>
-        <p>&copy; 2025 Volund Studio. Semua Hak Dilindungi.</p>
-    </footer>
+    <footer id="footer"></footer>
 
-    <script src="script.js"></script>
-
-<section id="services" class="services" data-scroll="fade-in">
-    <!-- WhatsApp Button -->
-</section>
-    <a href="https://wa.me/62895708968886" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-<section id="services" class="services" data-scroll="fade-in">
-    <!-- Cookie Consent -->
-</section>
-    <div class="cookie-consent">
-        <p>Kami menggunakan cookie untuk meningkatkan pengalaman Anda di website kami. Dengan melanjutkan, Anda menyetujui penggunaan cookie.</p>
-        <button class="cookie-btn">Setuju</button>
-    </div>
-
-<section id="shop" class="shop">
-    <h2 class="section-title">Toko Jasa Digital</h2>
-    <div class="product-filters">
-        <button class="filter-btn active" data-category="all">Semua</button>
-        <button class="filter-btn" data-category="templates">Template</button>
-        <button class="filter-btn" data-category="ebooks">E-book</button>
-        <button class="filter-btn" data-category="courses">Kursus</button>
-    </div>
-    <div class="product-grid">
-        <!-- Produk akan dimuat via JS -->
-    </div>
-</section>
-
-<!-- Modal Checkout -->
-<div id="checkout-modal" class="modal">
-    <div class="modal-content">
-        <span class="close-modal">&times;</span>
-        <h3>Checkout</h3>
-        <div class="checkout-summary">
-            <!-- Ringkasan pesanan -->
-        </div>
-        <form class="checkout-form">
-            <!-- Form pembayaran -->
-        </form>
-    </div>
-</div>
+    <!-- Scripts -->
+    <script src="js/main.js" type="module"></script>
 </body>
 </html>

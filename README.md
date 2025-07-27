@@ -1,1 +1,0 @@
-# ThytMin.github.io
